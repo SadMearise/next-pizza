@@ -19,6 +19,7 @@
     }
   },
   "rules": {
+    "@next/next/no-img-element": "off",
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/ban-ts-comment": "error",
     "@typescript-eslint/no-non-null-assertion": "off",
