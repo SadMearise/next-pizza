@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React from "react";
+import { FC, createElement } from "react";
 
 type TitleSize = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
 
@@ -9,7 +9,7 @@ interface Props {
   text: string;
 }
 
-const Title: React.FC<Props> = ({ text, size = "sm", className }) => {
+const Title: FC<Props> = ({ text, size = "sm", className }) => {
   const mapTagBySize = {
     xs: "h5",
     sm: "h4",
@@ -28,7 +28,7 @@ const Title: React.FC<Props> = ({ text, size = "sm", className }) => {
     "2xl": "text-[48px]",
   } as const;
 
-  return React.createElement(mapTagBySize[size], { className: clsx(mapClassNameBySize[size], className) }, text);
+  return createElement(mapTagBySize[size], { className: clsx(mapClassNameBySize[size], className) }, text);
 };
 
 export default Title;
