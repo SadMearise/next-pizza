@@ -10,6 +10,7 @@ import RangeSlider from "./range-slider";
 import CheckboxFiltersGroup from "./checkbox-filters-group";
 import ProductCard from "./product-card";
 import ProductsGroupList from "./products-group-list";
+import SearchInput from "./search-input";
 
 export {
   Container,
@@ -24,4 +25,5 @@ export {
   CheckboxFiltersGroup,
   ProductCard,
   ProductsGroupList,
+  SearchInput,
 };
