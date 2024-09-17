@@ -7,7 +7,7 @@
     "prettier",
     "airbnb"
   ],
-  "plugins": ["@typescript-eslint", "prettier"],
+  "plugins": ["import", "@typescript-eslint", "prettier"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2020,
@@ -88,6 +88,7 @@
       }
     ],
     "react/require-default-props": "off",
-    "prefer-destructuring": ["error", { "object": true, "array": false }]
+    "prefer-destructuring": ["error", { "object": true, "array": false }],
+    "import/no-unresolved": "error"
   }
 }
