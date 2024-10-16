@@ -2,7 +2,7 @@
 
 ![Project Status](https://img.shields.io/badge/status-finished-brightgreen.svg)
 
-[Preview]()
+[Preview](https://next-pizza-silk.vercel.app/)
 
 ## Navigation
 
