@@ -59,7 +59,7 @@ async function up() {
   const pizza1 = await prisma.product.create({
     data: {
       name: "Пепперони фреш",
-      imageUrl: "https://media.dodostatic.net/image/r:233x233/11EE7D61304FAF5A98A6958F2BB2D260.webp",
+      imageUrl: "/assets/images/pizza1.webp",
       categoryId: 1,
       ingredients: {
         connect: INGREDIENTS.slice(0, 5),
@@ -70,7 +70,7 @@ async function up() {
   const pizza2 = await prisma.product.create({
     data: {
       name: "Сырная",
-      imageUrl: "https://media.dodostatic.net/image/r:233x233/11EE7D610CF7E265B7C72BE5AE757CA7.webp",
+      imageUrl: "/assets/images/pizza2.webp",
       categoryId: 1,
       ingredients: {
         connect: INGREDIENTS.slice(5, 10),
@@ -81,7 +81,7 @@ async function up() {
   const pizza3 = await prisma.product.create({
     data: {
       name: "Чоризо фреш",
-      imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D61706D472F9A5D71EB94149304.webp",
+      imageUrl: "/assets/images/pizza3.webp",
       categoryId: 1,
       ingredients: {
         connect: INGREDIENTS.slice(10, 40),
@@ -148,6 +148,62 @@ async function up() {
       },
     },
   });
+
+  await prisma.story.createMany({
+    data: [
+      { previewImageUrl: "/assets/images/story1.webp" },
+      { previewImageUrl: "/assets/images/story2.webp" },
+      { previewImageUrl: "/assets/images/story3.webp" },
+      { previewImageUrl: "/assets/images/story4.webp" },
+      { previewImageUrl: "/assets/images/story5.webp" },
+      { previewImageUrl: "/assets/images/story6.webp" },
+    ],
+  });
+
+  await prisma.storyItem.createMany({
+    data: [
+      {
+        storyId: 1,
+        sourceUrl: "/assets/images/story-item1.webp",
+      },
+      {
+        storyId: 1,
+        sourceUrl: "/assets/images/story-item2.webp",
+      },
+      {
+        storyId: 2,
+        sourceUrl: "/assets/images/story-item3.webp",
+      },
+      {
+        storyId: 3,
+        sourceUrl: "/assets/images/story-item4.webp",
+      },
+      {
+        storyId: 4,
+        sourceUrl: "/assets/images/story-item5.webp",
+      },
+      {
+        storyId: 5,
+        sourceUrl: "/assets/images/story-item1.webp",
+      },
+      {
+        storyId: 5,
+        sourceUrl: "/assets/images/story-item2.webp",
+      },
+      {
+        storyId: 6,
+        sourceUrl: "/assets/images/story-item3.webp",
+      },
+      {
+        storyId: 6,
+        sourceUrl: "/assets/images/story-item4.webp",
+      },
+      {
+        storyId: 6,
+        sourceUrl: "/assets/images/story-item5.webp",
+      },
+    ],
+  });
 }
 
 async function down() {
@@ -158,6 +214,8 @@ async function down() {
   await prisma.$executeRaw`TRUNCATE TABLE "Product" RESTART IDENTITY CASCADE`;
   await prisma.$executeRaw`TRUNCATE TABLE "Ingredient" RESTART IDENTITY CASCADE`;
   await prisma.$executeRaw`TRUNCATE TABLE "ProductVariant" RESTART IDENTITY CASCADE`;
+  await prisma.$executeRaw`TRUNCATE TABLE "Story" RESTART IDENTITY CASCADE`;
+  await prisma.$executeRaw`TRUNCATE TABLE "StoryItem" RESTART IDENTITY CASCADE`;
 }
 
 async function main() {
