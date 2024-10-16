@@ -2,7 +2,7 @@
 
 ![Project Status](https://img.shields.io/badge/status-finished-brightgreen.svg)
 
-[Preview](next-pizza-dun-two.vercel.app)
+[Preview](https://next-pizza-dun-two.vercel.app/)
 
 ## Navigation
 
