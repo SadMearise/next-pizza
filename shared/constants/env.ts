@@ -1,4 +1,4 @@
-export const { DADATA_API_KEY } = process.env;
+export const DADATA_API_KEY = process.env.NEXT_PUBLIC_DADATA_API_KEY;
 
 export const { RESEND_API_KEY } = process.env;
 
